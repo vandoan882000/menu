@@ -1,0 +1,65 @@
+.menu1 {
+  height: 100px;
+  margin-bottom: 200px;
+  position: relative;
+  display: flex;
+
+}
+.menu1__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 30px;
+  z-index: -1;
+  transition: 0.3s ease-in;
+}
+.menu1 a {
+  width: 100px;
+  height: 30px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  text-align: center;
+
+}
+.menu1 a:nth-child(1):hover ~ .menu1__bg {
+  background-color: #ccc;
+}
+.menu1 a:nth-child(2):hover ~ .menu1__bg {
+  left: 100px;
+  background-color: rgb(243, 182, 182);
+}
+.menu1 a:nth-child(3):hover ~ .menu1__bg {
+  left: 200px;
+  background-color: rgb(247, 151, 151);
+}
+.menu1 a:nth-child(4):hover ~ .menu1__bg {
+  left: 300px;
+  background-color: rgb(243, 83, 83);
+}
+.menu1 a:nth-child(5):hover ~ .menu1__bg {
+  left: 400px;
+  background-color: rgb(252, 8, 8);
+}
+.menu1 a:nth-child(6):hover ~ .menu1__bg {
+  left: 500px;
+  background-color: rgb(9, 33, 247);
+}
+.menu1 a:nth-child(7):hover ~ .menu1__bg {
+  left: 600px;
+  background-color: rgb(51, 114, 250);
+}
+.menu1 a:nth-child(8):hover ~ .menu1__bg {
+  left: 700px;
+  background-color: rgb(85, 159, 243);
+}
+.menu1 a:nth-child(9):hover ~ .menu1__bg {
+  left: 800px;
+  background-color: rgb(176, 206, 245);
+}
+.menu1 a:nth-child(10):hover ~ .menu1__bg {
+  left: 900px;
+  background-color: rgb(217, 229, 243);
+}
