@@ -1,11 +1,62 @@
-{% import "../../shared/menu/menu.twig" as menu %}
+{% import "../../shared/megaMenu/megaMenu.twig" as megaMenu %}
 
 <section class="page-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				{{menu.render()}}
+				<nav class="nav">
+					<ul class="menu">
+						<li class="menu__list">
+							<a href="#" class="menu__link">Home</a>
+						</li>
+						<li class="menu__list">
+							<a href="#" class="menu__link">Drop
+								<i class="fas fa-chevron-down"></i>
+							</a>
+							<ul class="menu__submenu">
+								<li class="menu__list">
+									<a href="#" class="menu__link">Down1</a>
+								</li>
+								<li class="menu__list">
+									<a href="#" class="menu__link">Down2</a>
+								</li>
+								<li class="menu__list">
+									<a href="#" class="menu__link">Right
+										<i class="fa-solid fa-angle-right"></i>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__list">
+											<a href="#" class="menu__link">Right1</a>
+										</li>
+										<li class="menu__list">
+											<a href="#" class="menu__link">Right2</a>
+										</li>
+										<li class="menu__list">
+											<a href="#" class="menu__link">Right3</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="menu__list">
+							<a href="#" class="menu__link">Mega Menu</a>
+							<div class="menu__megamenu">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-6">
+											{{megaMenu.render()}}
+										</div>
+										<div class="col-lg-6">
+											{{megaMenu.render()}}
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</li>
+					</ul>
+				</nav>
 			</div>
-    </div>
-  </div>
+		</div>
+	</div>
 </section>
