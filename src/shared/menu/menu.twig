@@ -1,0 +1,24 @@
+{% import "../megaMenu/megaMenu.twig" as megaMenu %}
+{% macro render(options) %}
+  {% set data = options.data %}
+  {% set dirName = options.dirName %}
+	{% import _self as macros %}
+	{% for item in data %}
+		<li class="menu__list">
+			<a href={{item.url}}>{{item.label}}</a>
+			{% if item.submenu %}
+				{% if item.submenuType == "dropdown" %}
+					<ul class="menu__submenu">
+						{{macros.render({ data: item.submenu, dirName: dirName })}}
+					</ul>
+				{% endif %}
+				{% if item.submenuType == "megaMenu" %}
+          {% include dirName ~ item.submenu ~ ".twig" %}
+				{% endif %}
+
+			{% endif %}
+
+		</li>
+	{% endfor %}
+{% endmacro %}
+{% import _self as macros %}

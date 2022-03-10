@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Home",
+    "url": "#"
+  },
+  {
+    "label": "Drop",
+    "url": "",
+    "submenuType": "dropdown",
+    "submenu": [
+      {
+        "label": "Drop1",
+        "url": ""
+      },
+      {
+        "label": "Drop2",
+        "url": ""
+      },
+      {
+        "label": "Drop3",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "label": "Home",
+    "url": "",
+    "submenuType": "megaMenu",
+    "submenu": "megaMenuSection"
+  },
+  {
+    "label": "sdfsdfsdf",
+    "url": "",
+    "submenuType": "megaMenu",
+    "submenu": "abc"
+  }
+]

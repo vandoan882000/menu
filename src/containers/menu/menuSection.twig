@@ -1,6 +1,6 @@
 {% import "../../shared/megaMenu/megaMenu.twig" as megaMenu %}
-
-<section class="page-section">
+{% import "../../shared/menu/menu.twig" as menu %}
+<section class="page-section" styles="overflow-y: auto;">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-2 col-lg-2">
@@ -8,81 +8,20 @@
 			</div>
 			<div class="col-md-9 col-lg-10">
 				<nav id="nav" class="nav">
-					<ul id="menu" class="menu">
-						<li class="menu__list">
-							<a href="#" class="menu__link">Home</a>
-						</li>
-						<li class="menu__list">
-							<a href="#" class="menu__link">Drop
-								<i class="fas fa-chevron-down"></i>
-							</a>
-							<ul class="menu__submenu">
-								<li class="menu__list">
-									<a href="#" class="menu__link">Down1</a>
-								</li>
-								<li class="menu__list">
-									<a href="#" class="menu__link">Down2</a>
-								</li>
-								<li class="menu__list">
-									<a href="#" class="menu__link">Right
-										<i class="fa-solid fa-angle-right"></i>
-									</a>
-									<ul class="menu__submenu">
-										<li class="menu__list">
-											<a href="#" class="menu__link">Right1</a>
-										</li>
-										<li class="menu__list">
-											<a href="#" class="menu__link">Right2</a>
-										</li>
-										<li class="menu__list">
-											<a href="#" class="menu__link">Right3</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="menu__list">
-							<a href="#" class="menu__link">Mega Menu</a>
-							<div class="menu__megamenu">
-								<div class="container">
-									<div class="row">
-										<div class="col-md-12 col-lg-6">
-											{{megaMenu.render()}}
-										</div>
-										<div class="col-md-12 col-lg-6">
-											{{megaMenu.render()}}
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="menu__list">
-							<a href="#" class="menu__link">About</a>
-						</li>
-						<li class="menu__list">
-							<a href="#" class="menu__link">Support</a>
-						</li>
-						<li class="menu__list">
-							<a href="#" class="menu__link">Blog</a>
-						</li>
+					<ul class="menu">
+						{{menu.render({ data: menuSection, dirName: "../../containers/megaMenuSection/" })}}
 					</ul>
 				</nav>
 			</div>
-      <div id="icon-bar">
-         <i class="fa-solid fa-bars"></i>
-      </div>
-      <div id="icon-time">
-        <i class="fas fa-times"></i>
-      </div>
 
 
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<nav id="nav-mobile" class="nav-mobile">
-					<ul id="menu-mobile" class="menu-mobile">
+					<ul id="menu-mobile" class="menu-mobile" styles="overflow-y: auto;">
 						<li class="menu-mobile__list">
 							<a href="#" class="menu-mobile__link">Home</a>
 						</li>
-						<li class="menu-mobile__list" onclick="clickDropDown(this);">
+						<li class="menu-mobile__list" onclick="handleClickDropDown(this);">
 							<a href="#" class="menu-mobile__link">Drop
 								<i class="fas fa-chevron-down"></i>
 							</a>
@@ -93,14 +32,16 @@
 								<li class="menu-mobile__list">
 									<a href="#" class="menu-mobile__link">Down1</a>
 								</li>
-								<li class="menu-mobile__list" onclick="clickDropDown(this);">
+								<li class="menu-mobile__list" onclick="handleClickDropDown(this);">
 									<a href="#" class="menu-mobile__link">Down1
 									</a>
 								</li>
 							</ul>
 						</li>
-						<li class="menu-mobile__list" onclick="clickDropDown(this);">
-							<a href="#" class="menu-mobile__link">Mega Menu</a>
+						<li class="menu-mobile__list" onclick="handleClickDropDown(this);">
+							<a href="#" class="menu-mobile__link">Mega Menu
+								<i class="fas fa-chevron-down"></i>
+							</a>
 							<div class="menu-mobile__megamenu">
 								<div class="container">
 									<div class="row">
@@ -127,5 +68,11 @@
 				</nav>
 			</div>
 		</div>
+	</div>
+	<div id="icon-bar">
+		<i class="fa-solid fa-bars"></i>
+	</div>
+	<div id="icon-time">
+		<i class="fas fa-times"></i>
 	</div>
 </section>
