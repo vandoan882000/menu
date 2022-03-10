@@ -1,29 +1,33 @@
-console.log("test");
-
-var slideIndex = 3;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("quote");
-  var dots = document.getElementsByClassName("quote__dots");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+window.addEventListener('resize', resizeScreen );
+const iconBar = document.getElementById("icon-bar");
+const iconTime = document.getElementById("icon-time");
+const menu = document.getElementById("nav");
+const menuMobile = document.getElementById("nav-mobile");
+menuMobile.style.display = "none";
+function resizeScreen(){
+  if(window.innerWidth < 1000)
+  {
+    iconBar.style.display = "block";
+    iconTime.style.display = "none";
+    menuMobile.style.display = "none";
+    menu.style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace("quote__dots--selected", "quote__dots");
+  else
+  {
+    iconBar.style.display = "none";
+    iconTime.style.display = "none";
+    menuMobile.style.display = "none";
+    menu.style.display = "flex";
   }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " quote__dots--selected";
-}
 
+}
+iconBar.addEventListener("click", function click(){
+  iconBar.style.display = "none";
+  iconTime.style.display = "block";
+  menuMobile.style.display = "block";
+});
+iconTime.addEventListener("click", function click(){
+  iconBar.style.display = "block";
+  iconTime.style.display = "none";
+  menuMobile.style.display = "none";
+});

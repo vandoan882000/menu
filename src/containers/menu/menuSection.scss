@@ -1,5 +1,10 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
 ul {
   list-style: none;
+  padding-left: 0;
 }
 ul > li > a {
   width: auto;
@@ -46,5 +51,53 @@ ul > li > a:hover {
 }
 .menu__list:hover .menu__megamenu{
   display: block;
+}
+
+
+// mobile
+.nav-menu {
+  display: none;
+  width: 100%;
+}
+.menu-mobile {
+  text-align: center;
+}
+.menu-mobile > li >.menu-mobile__submenu {
+  display: none;
+}
+.menu-mobile > li:hover >.menu-mobile__submenu {
+  display: block;
+}
+.menu-mobile > li >.menu-mobile__submenu > li >.menu-mobile__submenu {
+  display: none;
+}
+.menu-mobile > li >.menu-mobile__submenu > li:hover >.menu-mobile__submenu {
+  display: block
+}
+.menu-mobile__megamenu {
+  display: none;
+  width: 100%;
+  background-color: #ccc;
+  padding-bottom: 10px;
+}
+.menu-mobile__list:hover .menu-mobile__megamenu{
+  display: block;
+}
+
+#icon-bar {
+  position: absolute;
+  display: none;
+  font-size: 30px;
+  top: 40px;
+  right: 35px;
+  cursor: pointer;
+}
+#icon-time {
+  display: none;
+  position: absolute;
+  font-size: 30px;
+  top: 40px;
+  right: 35px;
+  cursor: pointer;
 }
 
