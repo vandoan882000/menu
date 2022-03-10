@@ -62,28 +62,26 @@ ul > li > a:hover {
 .menu-mobile {
   text-align: center;
 }
-.menu-mobile > li >.menu-mobile__submenu {
+.menu-mobile__list >.menu-mobile__submenu {
   display: none;
 }
-.menu-mobile > li:hover >.menu-mobile__submenu {
+.menu-mobile__list--active >.menu-mobile__submenu {
   display: block;
 }
-.menu-mobile > li >.menu-mobile__submenu > li >.menu-mobile__submenu {
-  display: none;
-}
-.menu-mobile > li >.menu-mobile__submenu > li:hover >.menu-mobile__submenu {
-  display: block
-}
+
 .menu-mobile__megamenu {
   display: none;
   width: 100%;
   background-color: #ccc;
   padding-bottom: 10px;
 }
-.menu-mobile__list:hover .menu-mobile__megamenu{
+
+.menu-mobile__list >.menu-mobile__megamenu {
+  display: none;
+}
+.menu-mobile__list--active >.menu-mobile__megamenu {
   display: block;
 }
-
 #icon-bar {
   position: absolute;
   display: none;
