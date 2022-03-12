@@ -83,12 +83,16 @@ ul > li > a:hover {
   position: fixed;
   top: 94 px;
   left: 0;
-  background-color: #ccc;
+  background-color: black;
   transition: all 0.5s;
   transform: translateX(100%);
   overflow-x: hidden;
   overflow-y: auto;
 
+}
+.menu-mobile li:hover {
+  background-color: #ccc;
+  color: black;
 }
 // .menu-mobile__list >.menu-mobile__submenu {
 //   display: none;
@@ -105,7 +109,7 @@ ul > li > a:hover {
   text-align: center;
   top: 0;
   left: 0;
-  background-color: #ccc;
+  background-color: black;
 }
 .menu-mobile__megamenu {
   display: none;

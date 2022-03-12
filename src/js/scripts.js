@@ -57,15 +57,15 @@ function createMenu({
       buttonBack.addEventListener("click",handleButtonBackClick);
       buttonBack.textContent = " Back to " + listElItem.textContent;
       const iconBack = document.createElement("i");
-      iconBack.className = "fas fa-arrow-left";
-      buttonBack.insertAdjacentElement("afterbegin", iconBack);
+      iconBack.className = "fas fa-arrow-right";
+      buttonBack.insertAdjacentElement("beforeEnd", iconBack);
 
 
     }
     if(listElItem.nextElementSibling) {
       const i = document.createElement("i");
-      i.className = "fas fa-chevron-right";
-      listElItem.appendChild(i);
+      i.className = "fas fa-chevron-left";
+      listElItem.insertAdjacentElement("afterBegin", i);
     }
 
   }
