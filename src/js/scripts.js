@@ -55,7 +55,12 @@ function createMenu({
     if(currentSubmenu) {
       currentSubmenu.insertAdjacentElement("afterBegin", liButton);
       buttonBack.addEventListener("click",handleButtonBackClick);
-      buttonBack.textContent = "Back to " + listElItem.textContent;
+      buttonBack.textContent = " Back to " + listElItem.textContent;
+      const iconBack = document.createElement("i");
+      iconBack.className = "fas fa-arrow-left";
+      buttonBack.insertAdjacentElement("afterbegin", iconBack);
+
+
     }
     if(listElItem.nextElementSibling) {
       const i = document.createElement("i");
@@ -89,35 +94,39 @@ createMenu({
   }
 });
 
-
-
-
-
- window.addEventListener('resize', resizeScreen );
-const menu = document.getElementById("nav");
-const buttonMenu = document.getElementById("btn-show");
-console.log(buttonMenu);
-(function initMenu() {
-  if(window.innerWidth < 1000)
-  {
-    buttonMenu.style.display = "block";
-    menu.style.display = "none";
+function sizeScreen() {
+  const menu = document.getElementById("nav");
+  const buttonMenu = document.getElementById("btn-show");
+  function initMenu() {
+    if(window.innerWidth < 1000)
+    {
+      buttonMenu.style.display = "block";
+      menu.style.display = "none";
+    }
+    else
+    {
+      buttonMenu.style.display = "none";
+      menu.style.display = "flex";
+    }
   }
-  else
-  {
-    buttonMenu.style.display = "none";
-    menu.style.display = "flex";
+  function resizeScreen(){
+    if(window.innerWidth < 1000)
+    {
+      buttonMenu.style.display = "block";
+      menu.style.display = "none";
+    }
+    else
+    {
+      buttonMenu.style.display = "none";
+      menu.style.display = "flex";
+    }
   }
-})();
-function resizeScreen(){
-  if(window.innerWidth < 1000)
-  {
-    buttonMenu.style.display = "block";
-    menu.style.display = "none";
+  function init() {
+    initMenu();
+    window.addEventListener('resize', resizeScreen );
   }
-  else
-  {
-    buttonMenu.style.display = "none";
-    menu.style.display = "flex";
-  }
+  init();
 }
+
+sizeScreen();
+
