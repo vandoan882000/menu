@@ -90,6 +90,7 @@ createMenu({
   createButtonBack() {
     const buttonBack = document.createElement("button");
     buttonBack.textContent = "Back";
+    buttonBack.className = "btn-back";
     return buttonBack;
   }
 });
