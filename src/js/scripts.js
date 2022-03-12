@@ -2,7 +2,13 @@ function createMenu({
   createMenuButton,
   createButtonBack
 }) {
+  /**
+   * @type {HTMLElement}
+   */
   const navEl = document.querySelector(".nav-mobile");
+  /**
+   * @type {HTMLUListElement}
+   */
   const menuEl = navEl.querySelector(".menu-mobile");
   const listEl = menuEl.querySelectorAll(".menu-mobile__link");
   const buttonShowMenu = createMenuButton();
@@ -10,16 +16,15 @@ function createMenu({
     navEl.appendChild(buttonShowMenu);
   }
   function handleButtonClick() {
-    if(buttonShowMenu.className == "btn-show") {
+    const iconMenu = buttonShowMenu.children[0];
+    if( iconMenu.className == "fa-solid fa-bars") {
       menuEl.style.transform = "translateX(0)"
-      buttonShowMenu.className = "btn-hide";
-      buttonShowMenu.textContent = "Ẩn menu"
+      iconMenu.className = "fas fa-times"
     }
     else
     {
-      menuEl.style.transform = "translateX(100%)"
-      buttonShowMenu.className = "btn-show";
-      buttonShowMenu.textContent = "Hiện menu"
+      menuEl.style.transform = "translateX(100%)";
+      iconMenu.className = "fa-solid fa-bars";
     }
 
   }
@@ -67,12 +72,14 @@ function createMenu({
 
   init();
 }
-
 createMenu({
   createMenuButton() {
     const buttonShowMenu = document.createElement("button");
-    buttonShowMenu.textContent = "Hiện menu";
-    buttonShowMenu.className = "btn-show"
+    buttonShowMenu.className = "btn-show";
+    buttonShowMenu.id = "btn-show";
+    const iconBar = document.createElement("i");
+    iconBar.className = "fa-solid fa-bars"
+    buttonShowMenu.appendChild(iconBar);
     return buttonShowMenu;
   },
   createButtonBack() {
@@ -85,66 +92,32 @@ createMenu({
 
 
 
-window.addEventListener('resize', resizeScreen );
-const iconBar = document.getElementById("icon-bar");
-const iconTime = document.getElementById("icon-time");
+
+ window.addEventListener('resize', resizeScreen );
 const menu = document.getElementById("nav");
-const menuMobile = document.getElementById("nav-mobile");
+const buttonMenu = document.getElementById("btn-show");
+console.log(buttonMenu);
 (function initMenu() {
   if(window.innerWidth < 1000)
   {
-    iconBar.style.display = "block";
-    iconTime.style.display = "none";
-    menuMobile.className = "nav-mobile";
+    buttonMenu.style.display = "block";
     menu.style.display = "none";
   }
   else
   {
-    iconBar.style.display = "none";
-    iconTime.style.display = "none";
-    menuMobile.className = "nav-mobile";
+    buttonMenu.style.display = "none";
     menu.style.display = "flex";
   }
 })();
 function resizeScreen(){
   if(window.innerWidth < 1000)
   {
-    iconBar.style.display = "block";
-    iconTime.style.display = "none";
-    menuMobile.className = "nav-mobile";
+    buttonMenu.style.display = "block";
     menu.style.display = "none";
   }
   else
   {
-    iconBar.style.display = "none";
-    iconTime.style.display = "none";
-    menuMobile.className = "nav-mobile";
+    buttonMenu.style.display = "none";
     menu.style.display = "flex";
   }
 }
-// function handleClickCloseMenu() {
-//   iconBar.style.display = "block";
-//   iconTime.style.display = "none";
-//   menuMobile.className = "nav-mobile";
-// }
-// iconBar.addEventListener("click", function click(){
-//   iconBar.style.display = "none";
-//   iconTime.style.display = "block";
-//   menuMobile.className = "nav-mobile--active";
-// });
-// iconTime.addEventListener("click", function click(){
-//   iconBar.style.display = "block";
-//   iconTime.style.display = "none";
-//   menuMobile.className = "nav-mobile";
-// });
-
-// // function handleClickDropDown(li) {
-// //   if(li.className == "menu-mobile__list"){
-// //     li.className = li.className + "--active";
-// //     console.log(li.className + "");
-// //   }
-// //   else
-// //   {
-// //     li.className = "menu-mobile__list";
-// //   }
-// // };
