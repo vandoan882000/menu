@@ -15,6 +15,7 @@ const config = {
   img: "img",
   js: "js",
   shared: "shared",
+  container: "containers",
   output: {
     dev: "dev",
     prod: "build",
@@ -29,8 +30,9 @@ function compileScss(cb) {
   if (isDev) {
     gulp
       .src([
-        `${config.input}/${config.styles}/*.scss`,
-        `${config.input}/${config.shared}/*.scss`,
+        `${config.input}/${config.styles}/**/*.scss`,
+        `${config.input}/${config.shared}/**/*.scss`,
+        `${config.input}/${config.container}/**/*.scss`,
       ])
       .pipe(sourcemaps.init())
       .pipe(sassGlob())
@@ -41,8 +43,9 @@ function compileScss(cb) {
   }
   gulp
     .src([
-      `${config.input}/${config.styles}/*.scss`,
-      `${config.input}/${config.shared}/*.scss`,
+      `${config.input}/${config.styles}/**/*.scss`,
+      `${config.input}/${config.shared}/**/*.scss`,
+      `${config.input}/${config.container}/**/*.scss`,
     ])
     .pipe(sassGlob())
     .pipe(sass().on("error", sass.logError))

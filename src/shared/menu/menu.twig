@@ -5,7 +5,13 @@
 	{% import _self as macros %}
 	{% for item in data %}
 		<li class="menu__list">
-			<a href={{item.url}}>{{item.label}}</a>
+			<a href={{item.url}}>{{item.label}}
+      {% if item.submenu %}
+				{% if item.submenuType == "dropdown" %}
+					<i class="fas fa-angle-down"></i>
+        {% endif %}
+			{% endif %}
+      </a>
 			{% if item.submenu %}
 				{% if item.submenuType == "dropdown" %}
 					<ul class="menu__submenu">
