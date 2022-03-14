@@ -1,4 +1,5 @@
 function createMenu({
+  width = 100,
   createMenuButton,
   createButtonBack
 }) {
@@ -53,19 +54,15 @@ function createMenu({
     liButton.appendChild(buttonBack);
     const currentSubmenu = listElItem.nextElementSibling;
     if(currentSubmenu) {
+      const i = document.createElement("i");
+      i.className = "fas fa-chevron-right";
+      listElItem.insertAdjacentElement("beforeEnd", i);
       currentSubmenu.insertAdjacentElement("afterBegin", liButton);
       buttonBack.addEventListener("click",handleButtonBackClick);
       buttonBack.textContent = " Back to " + listElItem.textContent;
       const iconBack = document.createElement("i");
-      iconBack.className = "fas fa-arrow-right";
-      buttonBack.insertAdjacentElement("beforeEnd", iconBack);
-
-
-    }
-    if(listElItem.nextElementSibling) {
-      const i = document.createElement("i");
-      i.className = "fas fa-chevron-left";
-      listElItem.insertAdjacentElement("afterBegin", i);
+      iconBack.className = "fas fa-arrow-left";
+      buttonBack.insertAdjacentElement("afterBegin", iconBack);
     }
 
   }
@@ -97,17 +94,23 @@ createMenu({
 
 function sizeScreen() {
   const menu = document.getElementById("nav");
+  /**
+   * @type {HTMLElement}
+   */
+   const navEl = document.querySelector(".nav-mobile");
   const buttonMenu = document.getElementById("btn-show");
   function initMenu() {
     if(window.innerWidth < 1000)
     {
       buttonMenu.style.display = "block";
       menu.style.display = "none";
+      navEl.style.transform = "translateX(0)"
     }
     else
     {
       buttonMenu.style.display = "none";
       menu.style.display = "flex";
+      navEl.style.transform = "translateX(100%)"
     }
   }
   function resizeScreen(){
@@ -115,16 +118,19 @@ function sizeScreen() {
     {
       buttonMenu.style.display = "block";
       menu.style.display = "none";
+      navEl.style.transform = "translateX(0)"
     }
     else
     {
       buttonMenu.style.display = "none";
       menu.style.display = "flex";
+      navEl.style.transform = "translateX(100%)"
     }
   }
   function init() {
     initMenu();
     window.addEventListener('resize', resizeScreen );
+    console.log(buttonMenu);
   }
   init();
 }

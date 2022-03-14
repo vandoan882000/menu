@@ -1,0 +1,153 @@
+[
+  {
+    "label": " Home ",
+    "url": "#"
+  },
+  {
+    "label": " Feature ",
+    "url": "#",
+    "submenuType": "dropdown",
+    "submenu": [
+      {
+        "label": " Feature 1 ",
+        "url": "#"
+      },
+      {
+        "label": " Feature 2 ",
+        "url": "#"
+      },
+      {
+        "label": " Feature 3 ",
+        "url": "#",
+        "submenuType": "dropdown",
+        "submenu": [
+          {
+            "label": " Feature 3.1 ",
+            "url": "#"
+          },
+          {
+            "label": " Feature 3.2 ",
+            "url": "#"
+          },
+          {
+            "label": " Feature 3.3 ",
+            "url": "#",
+            "submenuType": "dropdown",
+            "submenu": [
+              {
+                "label": " Feature 3.3.1 ",
+                "url": "#"
+              },
+              {
+                "label": " Feature 3.3.2 ",
+                "url": "#"
+              },
+              {
+                "label": " Feature 3.3.3 ",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": " Service ",
+    "url": "#",
+    "submenuType": "dropdown",
+    "submenu": [
+      {
+        "label": " Service 1",
+        "url": "#"
+      },
+      {
+        "label": " Service 2",
+        "url": "#"
+      },
+      {
+        "label": " Service 3 ",
+        "url": "#",
+        "submenuType": "dropdown",
+        "submenu": [
+          {
+            "label": " Service 3.1 ",
+            "url": "#"
+          },
+          {
+            "label": " Service 3.2 ",
+            "url": "#"
+          },
+          {
+            "label": " Service 3.3 ",
+            "url": "#",
+            "submenuType": "dropdown",
+        "submenu": [
+          {
+            "label": " Service 3.3.1 ",
+            "url": "#"
+          },
+          {
+            "label": " Service 3.3.2 ",
+            "url": "#"
+          },
+          {
+            "label": " Service 3.3.3 ",
+            "url": "#"
+          }
+        ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": " Contact ",
+    "url": "#",
+    "submenuType": "dropdown",
+    "submenu": [
+      {
+        "label": " Contact 1 ",
+        "url": "#"
+      },
+      {
+        "label": " Contact 2 ",
+        "url": "#"
+      },
+      {
+        "label": " Contact 3 ",
+        "url": "#",
+        "submenuType": "dropdown",
+        "submenu": [
+          {
+            "label": " Contact 3.1 ",
+            "url": "#"
+          },
+          {
+            "label": " Contact 3.2 ",
+            "url": "#"
+          },
+          {
+            "label": " Contact 3.3 ",
+            "url": "#",
+            "submenuType": "dropdown",
+            "submenu": [
+              {
+                "label": " Contact 3.3.1 ",
+                "url": "#"
+              },
+              {
+                "label": " Contact 3.3.2 ",
+                "url": "#"
+              },
+              {
+                "label": " Contact 3.3.3 ",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

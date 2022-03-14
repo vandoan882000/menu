@@ -1,5 +1,7 @@
 {% import "../../shared/megaMenu/megaMenu.twig" as megaMenu %}
 {% import "../../shared/menu/menu.twig" as menu %}
+{% import "../../shared/menuMoblie/menuMoblie.twig" as menu1 %}
+{# {% import "../../shared/menuMobile/menuMoblie.twig" as menuMobile %} #}
 <section class="page-section" style="background-color:black;">
 	<div class="container">
 		<div class="row">
@@ -14,73 +16,12 @@
 				</nav>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<nav id="nav-mobile" class="nav-mobile">
-					<ul id="menu-mobile" class="menu-mobile" styles="overflow-y: auto;">
-						<li class="menu-mobile__list">
-							<a href="#" class="menu-mobile__link"> Home </a>
-						</li>
-						<li class="menu-mobile__list">
-							<a href="#" class="menu-mobile__link"> Drop </a>
-							<ul class="menu-mobile__submenu">
-								<li class="menu-mobile__list">
-									<a href="#" class="menu-mobile__link"> Down1 </a>
-								</li>
-								<li class="menu-mobile__list">
-									<a href="#" class="menu-mobile__link"> Down1 </a>
-								</li>
-								<li class="menu-mobile__list">
-									<a href="#" class="menu-mobile__link"> Down1
-									</a>
-									<ul class="menu-mobile__submenu">
-										<li class="menu-mobile__list">
-											<a href="#" class="menu-mobile__link"> Down2 </a>
-										</li>
-										<li class="menu-mobile__list">
-											<a href="#" class="menu-mobile__link"> Down2 </a>
-										</li>
-										<li class="menu-mobile__list">
-											<a href="#" class="menu-mobile__link"> Down2
-											</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						{# <li class="menu-mobile__list" onclick="handleClickDropDown(this);">
-													<a href="#" class="menu-mobile__link">Mega Menu
-														<i class="fas fa-chevron-down"></i>
-													</a>
-													<div class="menu-mobile__megamenu">
-														<div class="container">
-															<div class="row">
-																<div class="col-md-12 col-lg-6">
-																	{{megaMenu.render()}}
-																</div>
-																<div class="col-md-12 col-lg-6">
-																	{{megaMenu.render()}}
-																</div>
-															</div>
-														</div>
-													</div>
-												</li> #}
-						<li class="menu-mobile__list">
-							<a href="#" class="menu-mobile__link">About</a>
-						</li>
-						<li class="menu-mobile__list">
-							<a href="#" class="menu-mobile__link">Support</a>
-						</li>
-						<li class="menu-mobile__list">
-							<a href="#" class="menu-mobile__link">Blog</a>
-						</li>
-					</ul>
-				</nav>
+      	<nav id="nav-mobile" class="nav-mobile">
+          <ul id="menu-mobile" class="menu-mobile">
+				    {{menu1.render({ data: menuMobileSection, dirName: "../../containers/megaMenuSection/" })}}
+          </ul>
+        </nav>
 			</div>
 		</div>
-	</div>
-	<div id="icon-bar">
-		<i class="fa-solid fa-bars"></i>
-	</div>
-	<div id="icon-time">
-		<i class="fas fa-times"></i>
 	</div>
 </section>

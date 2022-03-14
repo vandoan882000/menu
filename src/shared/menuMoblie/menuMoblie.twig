@@ -1,0 +1,19 @@
+
+{% macro render(options) %}
+	{% set data = options.data %}
+	{% set dirName = options.dirName %}
+	{% import _self as macros %}
+	{% for item in data %}
+		<li class="menu-mobile__list">
+			<a class="menu-mobile__link" href={{item.url}}>{{item.label}}</a>
+			{% if item.submenu %}
+				{% if item.submenuType == "dropdown" %}
+					<ul class="menu-mobile__submenu">
+						{{macros.render({ data: item.submenu, dirName: dirName })}}
+					</ul>
+				{% endif %}
+			{% endif %}
+		</li>
+	{% endfor %}
+{% endmacro %}
+{% import _self as macros %}

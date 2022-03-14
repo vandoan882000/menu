@@ -19,7 +19,9 @@
 					</ul>
 				{% endif %}
 				{% if item.submenuType == "megaMenu" %}
-          {% include dirName ~ item.submenu ~ ".twig" %}
+          <div class="menu__megamenu">
+            {% include dirName ~ item.submenu ~ ".twig" %}
+          </div>
 				{% endif %}
 
 			{% endif %}
